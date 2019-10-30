@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setup(
     name='southern_hemisphere',
-    version='0.1.0',
+    version='0.1.2',
     description="A module used for a lightning talk at ChiPy meetup group",
     long_description=readme,
     author="Janis Lesinskis",
@@ -16,7 +16,9 @@ setup(
     package_dir={'southern_hemisphere':
                  'southern_hemisphere'},
     include_package_data=True,
-    install_requires=[],
+    install_requires=[
+        "upsidedown",
+    ],
     zip_safe=False,
     keywords='ChiPy',
     classifiers=[
