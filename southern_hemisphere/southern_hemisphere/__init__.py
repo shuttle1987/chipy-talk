@@ -14,4 +14,5 @@ def __dir__():
     global results
     if not results:
         results = generate()
+        results.remove("upsidedown")
     return results
