@@ -1,16 +1,17 @@
-current_location = "Australia"
+import sys
+current_location = sys.intern("Australia")
 
 def set_to_australia():
     global current_location
-    current_location = "Australia"
+    current_location = sys.intern("Australia")
 
 def set_to(place):
     global current_location
-    current_location = place
+    current_location = sys.intern(place)
 
 def set_to_chicago():
     global current_location
-    current_location = "Chicago"
+    current_location = sys.intern("Chicago")
 
 def get_current_location():
     global current_location

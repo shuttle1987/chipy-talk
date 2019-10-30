@@ -10,7 +10,7 @@ rev_mapper = {}
 import location
 
 def worldmap():
-    if location.get_current_location() == "Australia":
+    if location.get_current_location() == sys.intern("Australia"):
         from IPython.display import Image
         return Image("ausMap.png")
     else:
@@ -83,7 +83,7 @@ def __dir__() -> List[str]:
     global results
     if not results:
         results = generate()
-    if location.get_current_location() == "Australia":
+    if location.get_current_location() == sys.intern("Australia"):
         return results
     this = sys.modules[__name__]
     return dir(this)

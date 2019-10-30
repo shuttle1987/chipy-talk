@@ -40,9 +40,9 @@ def halloween_ize(spooky):
         """🎃🎃🎃 Let's make this more awesome!!! 🎃🎃🎃"""
         halloween_prefix = "🎃🎃🎃"
         halloween_suffix = "🎃🎃🎃"
-        print("==get_cl()=", location.get_current_location())
-        print(id(location.current_location))
-        print("==cl==", location.current_location)
+        #print("==get_cl()=", location.get_current_location())
+        #print(id(location.current_location))
+        #print("==cl==", location.current_location)
         if location.get_current_location() == "Australia":
             nonlocal australia_called
             australia_called += 1
