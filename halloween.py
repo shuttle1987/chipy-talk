@@ -15,7 +15,8 @@ def make_trick_prefix(more_icons=False):
         icons = ['🕸️', '🦇', '👻']
     else:
         icons = ['🕸️', '🦇', '👻', '😈', '😱', '💀', '🦴', '⚰️']
-    return random.shuffle(icons)[:3]
+    random.shuffle(icons)
+    return icons[:3]
 
 def make_treat_prefix(more_icons=False):
     """Make the haloween treat prefixes"""
@@ -24,7 +25,8 @@ def make_treat_prefix(more_icons=False):
         icons = ['🍬','🍭', '🍫']
     else:
         icons = ['🍬','🍭', '🍫', '🍿', '🎉']
-    return random.shuffle(icons)[:3]
+    random.shuffle(icons)
+    return icons[:3]
 
 def halloween_ize(spooky):
     """Make it more Halloween!"""
