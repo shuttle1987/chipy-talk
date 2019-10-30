@@ -5,7 +5,7 @@ with open('README.md') as readme_file:
 
 setup(
     name='southern_hemisphere',
-    version='0.1.4',
+    version='0.1.5',
     description="A module used for a lightning talk at ChiPy meetup group",
     long_description=readme,
     author="Janis Lesinskis",

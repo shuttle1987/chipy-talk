@@ -11,22 +11,26 @@ class HalloweenException(Exception):
 def make_trick_prefix(more_icons=False):
     """Make the haloween trick prefixes"""
     import random 
+    icons = ['🕸️', '🦇', '👻']
     if more_icons:
-        icons = ['🕸️', '🦇', '👻']
-    else:
         icons = ['🕸️', '🦇', '👻', '😈', '😱', '💀', '🦴', '⚰️']
     random.shuffle(icons)
-    return icons[:3]
+    return "".join(icons[:3])
 
 def make_treat_prefix(more_icons=False):
     """Make the haloween treat prefixes"""
     import random 
+    icons = ['🍬','🍭', '🍫']
     if more_icons:
-        icons = ['🍬','🍭', '🍫']
-    else:
         icons = ['🍬','🍭', '🍫', '🍿', '🎉']
     random.shuffle(icons)
-    return icons[:3]
+    return "".join(icons[:3])
+
+def more_treats():
+    location.trick_or_treat_state = location.TrickOrTreatState.MORE_TREATS
+
+def more_tricks():
+    location.trick_or_treat_state == location.TrickOrTreatState.MORE_TRICKS
 
 def halloween_ize(spooky):
     """Make it more Halloween!"""
@@ -36,7 +40,10 @@ def halloween_ize(spooky):
         """🎃🎃🎃 Let's make this more awesome!!! 🎃🎃🎃"""
         halloween_prefix = "🎃🎃🎃"
         halloween_suffix = "🎃🎃🎃"
-        if location.current_location == "Australia":
+        print("==get_cl()=", location.get_current_location())
+        print(id(location.current_location))
+        print("==cl==", location.current_location)
+        if location.get_current_location() == "Australia":
             nonlocal australia_called
             australia_called += 1
             if australia_called == 1:
