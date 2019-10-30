@@ -8,12 +8,10 @@ def map():
 
 names_defined_here = globals()
 
-secret_names = ["upsidedown"]
-
 def generate() -> List[str]:
     """Generate the method names"""
     global names_defined_here
-    secret_names = ["upsidedown"]
+    secret_names = ["upsidedown", "names_defined_here"]
     return [upsidedown.transform(name) for name in names_defined_here if name not in secret_names]
 
 results = []
