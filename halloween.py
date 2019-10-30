@@ -8,6 +8,24 @@ import location
 class HalloweenException(Exception):
     pass
 
+def make_trick_prefix(more_icons=False):
+    """Make the haloween trick prefixes"""
+    import random 
+    if more_icons:
+        icons = ['🕸️', '🦇', '👻']
+    else:
+        icons = ['🕸️', '🦇', '👻', '😈', '😱', '💀', '🦴', '⚰️']
+    return random.shuffle(icons)[:3]
+
+def make_treat_prefix(more_icons=False):
+    """Make the haloween treat prefixes"""
+    import random 
+    if more_icons:
+        icons = ['🍬','🍭', '🍫']
+    else:
+        icons = ['🍬','🍭', '🍫', '🍿', '🎉']
+    return random.shuffle(icons)[:3]
+
 def halloween_ize(spooky):
     """Make it more Halloween!"""
     australia_called = 0
@@ -30,10 +48,18 @@ def halloween_ize(spooky):
                 halloween_prefix = "🦘🦘🦘"
                 halloween_suffix = "🦘🦘🦘"
         res = spooky(*args, **kwargs)
+        if location.trick_or_treat_state == location.TrickOrTreatState.MORE_TREATS:
+            trick_or_treat_prefix = make_treat_prefix(more_icons=True)
+            trick_or_treat_suffix = make_treat_prefix(more_icons=True)
+            return halloween_prefix + trick_or_treat_prefix + TREAT + trick_or_treat_suffix + halloween_suffix
+        elif location.trick_or_treat_state == location.TrickOrTreatState.MORE_TRICKS:
+            trick_or_treat_prefix = make_trick_prefix(more_icons=True)
+            trick_or_treat_suffix = make_trick_prefix(more_icons=True)
+            return halloween_prefix + trick_or_treat_prefix + TRICK + trick_or_treat_suffix + halloween_suffix
         if res == TRICK:
-            return halloween_prefix + "🕸️ 🦇 👻 " + res + "🕸️ 🦇 👻 " + halloween_suffix
+            return halloween_prefix + make_trick_prefix() + res + make_trick_prefix() + halloween_suffix
         elif res == TREAT:
-            return halloween_prefix + "🍬 🍭 🍫 " + res + "🍬 🍭 🍫 " + halloween_suffix
+            return halloween_prefix + make_treat_prefix() + res + make_treat_prefix() + halloween_suffix
         else:
             return res
     return more_halloween
