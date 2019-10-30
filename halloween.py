@@ -14,7 +14,6 @@ def halloween_ize(spooky):
     @wraps(spooky)
     def more_halloween(*args, **kwargs):
         """🎃🎃🎃 Let's make this more awesome!!! 🎃🎃🎃"""
-        print(func.__name__ + " was called")
         halloween_prefix = "🎃🎃🎃"
         halloween_suffix = "🎃🎃🎃"
         if location.current_location == "Australia":
@@ -27,7 +26,7 @@ def halloween_ize(spooky):
                                          "perhaps you should consider travelling to the northern hemisphere using "
                                          "southern_hemisphere.travel_to('Chicago') ?")
             elif australia_called >= 3:
-                
+
                 halloween_prefix = "🦘🦘🦘"
                 halloween_suffix = "🦘🦘🦘"
         res = spooky(*args, **kwargs)
