@@ -5,7 +5,7 @@ TREAT = "treat"
 
 import location
 
-def HalloweenException(Exception):
+class HalloweenException(Exception):
     pass
 
 def halloween_ize(func):
