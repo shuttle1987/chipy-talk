@@ -23,7 +23,7 @@ def halloween_ize(func):
                 raise HalloweenException("🎃🎃🎃 Pumpkins aren't in season in australia now... 🎃🎃🎃")
             elif australia_called == 2:
                 raise HalloweenException("Seems like you still really want to celebrate halloween in Australia, "
-                                         "perhaps you should consider travelling to the northern hemisphere using"
+                                         "perhaps you should consider travelling to the northern hemisphere using "
                                          "southern_hemisphere.travel_to('Chicago') ?")
             elif australia_called >= 3:
                 halloween_prefix = "🦘🦘🦘"
