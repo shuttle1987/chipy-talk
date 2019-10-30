@@ -1,5 +1,9 @@
 current_location = "Australia"
 
+def set_to_australia():
+    global current_location
+    current_location = "Australia"
+
 from enum import Enum
 class TrickOrTreatState(Enum):
     REGULAR = 1

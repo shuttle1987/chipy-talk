@@ -5,6 +5,15 @@ import upsidedown
 
 names_defined_here = globals()
 
+import location
+
+def travel_to(place: str) -> None:
+    """Travel somewhere else"""
+    if "Aus" in place:
+        location.set_to_australia()
+    else:
+        location.current_location = place
+
 
 def generate() -> List[str]:
     """Generate the method names"""
