@@ -4,10 +4,20 @@ from typing import List
 import upsidedown
 
 names_defined_here = globals()
-
-
 rev_mapper = {}
 import location
+
+from . import Australia
+
+Australia.__doc__ = """
+¡sǝʎ :ɐᴉꞁɐɹʇsnⱯ ɯoɹɟ sʌǝp ǝɹoɔ ƃouɐɾᗡ ɟo ɥɔunq ɐ ʇ,uǝɹⱯ
+˙ǝɹɐ ǝʍ ʎꞁꞁɐǝɹ 'ʎɹɹos os ǝɹɐ ǝʍ ǝpoɔ ǝuozǝɯᴉʇ ɥʇᴉʍ ꞁɐǝp noʎ ɟᴉ 'sǝʎ :sǝuozǝɯᴉʇ ǝɹɹɐzᴉq ʎꞁꞁɐǝɹ ǝɯos ǝʌɐɥ noʎ ʇ,uoᗡ
+ɅWW⅄ ʎq spɹɐpuɐʇs ꞁɐɔoꞁ ʎq ou :ʎꞁpɐǝp ǝɹɐ sooɹɐƃuɐ⋊ ǝsnɐɔǝq ʇɐɥʇ sI
+ou :sooɹɐƃuɐ⋊ ǝpᴉɹ ǝꞁdoǝd oᗡ
+sǝʎ :ʎꞁpɐǝp sꞁɐɯᴉuɐ ǝɥʇ ǝɹⱯ
+:sꝹⱯᖵ ǝɯos 'ɐᴉꞁɐɹʇsnⱯ sᴉ sᴉɥʇ ʎǝH
+"""
+
 
 def worldmap():
     if location.get_current_location() == sys.intern("Australia"):
@@ -85,6 +95,6 @@ def __dir__() -> List[str]:
         results = generate()
     if location.get_current_location() == sys.intern("Australia"):
         return results
-    this = sys.modules[__name__]
-    return dir(this)
-
+    #this = sys.modules[__name__]
+    #return dir(this)
+    return globals()

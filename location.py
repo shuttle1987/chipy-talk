@@ -24,3 +24,11 @@ class TrickOrTreatState(Enum):
     MORE_TRICKS = 3
 
 trick_or_treat_state = TrickOrTreatState.REGULAR
+
+def get_current_trick_or_treat_state():
+    global trick_or_treat_state
+    return trick_or_treat_state
+
+def set_current_trick_or_treat_state(state):
+    global trick_or_treat_state
+    trick_or_treat_state = state
