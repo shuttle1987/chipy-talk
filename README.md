@@ -13,3 +13,7 @@ pip install southern_hemisphere
 ```
 
 Then make sure you have jupyter-notebook installed and open the `ChiPy trick or treat.ipynb` notebook, running all cells should mostly recreate the code portion of talk presentation.
+
+## Thanks
+
+Thanks to my company [Scry Engineering](https://www.scrygroup.com/) for helping with this talk and thanks to some of my Python trainer colleagues at [Python Charmers](https://www.scrygroup.com/) for discussing some of the details of Folium and other GIS topics that were involved in this talk.
